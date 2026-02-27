@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trucking Planner System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="default-collapsed login-page">
+
+  <div id="app">
+    <aside id="sidebar" class="sidebar" style="display:none">
+      <div class="sb-header">
+        <div class="small">Hi, <b id="sb-username">-</b></div>
+        <div class="small">Role: <b id="sb-role">-</b></div>
+        <div class="small" id="sb-vendor-wrap" style="display:none;">EMKL: <b id="sb-vendor">-</b></div>
+      </div>
+      <hr>
+      <nav id="menu" aria-label="Main menu"></nav>
+      <hr>
+      <button id="logoutBtn" class="btn full danger">Logout</button>
+      <div class="small muted" id="lastUpdate"></div>
+    </aside>
+
+    <div id="notificationBell" class="notification-bell" style="display:none">
+      <span class="bell-icon">🔔</span>
+      <div id="notificationContent" class="notification-content"></div>
+    </div>
+
+    <main id="content"></main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="margin:0">Detail</h3>
+        <button id="modalClose" class="btn danger" aria-label="Tutup">Tutup</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="watermark" class="watermark-footer">
+    <span class="watermark-text">Almira Oktapazia - Eksport Delivery IKK</span>
+  </div>
+
+  <!-- 1. Library -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- 2. Firebase SDK (compat - script biasa, bukan module) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <!-- 3. Init Firebase -->
+  <script>
+    firebase.initializeApp({
+      apiKey: "AIzaSyCfRtSTxBzEt7rbU_1QAq03VwluacGlsaw",
+      authDomain: "booking-trucking-system.firebaseapp.com",
+      databaseURL: "https://booking-trucking-system-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "booking-trucking-system",
+      storageBucket: "booking-trucking-system.firebasestorage.app",
+      messagingSenderId: "918157196747",
+      appId: "1:918157196747:web:9f8b89abee1ccc36db8a4e"
+    });
+    window.db = firebase.database();
+  </script>
+
+  <!-- 4. App kamu (tidak diubah sama sekali) -->
+  <script src="app.js"></script>
+
+  <!-- 5. Firebase sync (file baru, terpisah) -->
+  <script src="firebase-sync.js"></script>
+
+</body>
+</html>
