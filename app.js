@@ -2,6 +2,10 @@
 // State & persistence
 const ACCOUNTS = {
   "Almira@app.co.id": { password: "1110", role: "admin" },
+  "Andhika@app.co.id": { password: "1110", role: "admin" },
+  "Rizky@app.co.id": { password: "1110", role: "admin" },
+  "Okky@app.co.id": { password: "1110", role: "admin" },
+  "Adek@app.co.id": { password: "1110", role: "admin" },
   "cakraindo@vendor.com": { password: "123", role: "vendor", vendor: "PT Cakraindo Mitra International" },
   "argotm@vendor.com": { password: "123", role: "vendor", vendor: "PT Argo Trans Mandiri" },
   "puninar@vendor.com": { password: "123", role: "vendor", vendor: "PT Puninar Logistics" },
